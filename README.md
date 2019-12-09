@@ -1,15 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+Most frequent month/day/start hour, most common start/end stations. Total and mean travel times. Earliest/common/most recent birth years.
 
 ### Project Title
-Replace the Project Title
+Bikeshare Data Analysis
 
 ### Description
-Describe what your project is about and what it does
+Filters data based on user inputs.
 
 ### Files used
-Include the files used
+Bikeshare database.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Udacity!
