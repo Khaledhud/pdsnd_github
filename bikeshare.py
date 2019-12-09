@@ -1,8 +1,9 @@
+# Importing all neccessery libraries.
 import time
-import datetime 
+import datetime
 import pandas as pd
 import numpy as np
-
+# City data is take from Chicago, New York and Washington City.
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -29,7 +30,7 @@ def get_filters():
                 print('\n You didn\'t enter a valid city ! \n')
         except:
             print('Try again ! \n')
-     
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         try:
@@ -75,10 +76,10 @@ def load_data(city, month, day):
 
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # convert the End Time column to datetime
     df['End Time'] = pd.to_datetime(df['End Time'])
-    
+
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
@@ -125,7 +126,7 @@ def time_stats(df,city,month,day):
     df['st_hour'] = df['Start Time'].dt.hour
     popular_st_hour = df['st_hour'].mode()[0]
     print('\nMost common start hour is: ',popular_st_hour)
-    
+
     # Additional: display the most common end hour
     df['end_hour'] = df['End Time'].dt.hour
     popular_end_hour = df['end_hour'].mode()[0]
@@ -145,7 +146,7 @@ def station_stats(df):
     # TO DO: display most commonly used start station
     pop_st_station = df['Start Station'].mode()[0]
     print('\n Most commonly used start station is: \n',pop_st_station)
-    
+
     # TO DO: display most commonly used end station
     pop_end_station = df['End Station'].mode()[0]
     print('\n Most commonly used end station is: \n',pop_end_station)
@@ -168,7 +169,7 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     tot_duration = df['Trip Duration'].sum()
-    
+
     # Converting the time from seconds to [hour,min,sec] fro better realization
     seconds = tot_duration
     hour = seconds / 3600
@@ -180,7 +181,7 @@ def trip_duration_stats(df):
 
     # TO DO: display mean travel time
     avg_duration = df['Trip Duration'].mean()
-    
+
     # Converting the time from seconds to [hour,min,sec] fro better realization
     seconds = avg_duration
     hour = seconds / 3600
@@ -200,7 +201,7 @@ def user_stats(df,city):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    
+
     user_types = df['User Type'].value_counts()
     print('\n{}\n'.format(user_types))
 
