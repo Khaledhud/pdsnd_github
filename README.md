@@ -11,4 +11,4 @@ Filters data based on user inputs.
 Bikeshare database.
 
 ### Credits
-Udacity!
+Udacity! and co.
